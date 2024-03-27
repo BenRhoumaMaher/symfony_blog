@@ -1,0 +1,30 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block content %}
+	<div class="comment-form-wrap pt-5">
+		<h3 class="ps-5">Update your profile</h3>
+		<form action="{{ path('user_users_edit', {'user': user.id}) }}" class="ps-5 pe-5 bg-light" method="POST">
+
+
+			<div class="form-group">
+				<input type="text" name="name" class="form-control" value="{{ user.name }}" placeholder="Write your name">
+			</div>
+
+			<div class="form-group">
+
+				<input type="text" name="email" class="form-control" value="{{ user.email }}" placeholder="Write your email">
+			</div>
+
+			<div class="form-group">
+
+				<textarea placeholder="Write your bio please" name="bio" id="bio" cols="30" rows="10" class="form-control">{{ user.bio }}</textarea>
+			</div>
+
+			{% if app.user.id == user.id %}
+				<div class="form-group">
+					<input type="submit" value="Update Profile" class="btn btn-primary">
+				</div>
+			{% endif %}
+		</form>
+	</div>
+{% endblock %}

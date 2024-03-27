@@ -1,0 +1,3 @@
+category_single:
+    path: /category/{category}
+    controller: App\Controller\Categories\CategoriesController::category

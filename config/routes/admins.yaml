@@ -1,0 +1,51 @@
+admins_login:
+    path: /admin/login
+    controller: App\Controller\Admins\AdminsController::checkLogin
+
+admins_dashboard:
+    path: /dashboard
+    controller: App\Controller\Admins\AdminsController::index
+
+admins_list:
+    path: /list
+    controller: App\Controller\Admins\AdminsController::showAdmins
+
+admins_create:
+    path: /create
+    controller: App\Controller\Admins\AdminsController::createAdmins
+
+admins_store:
+    path: /store
+    controller: App\Controller\Admins\AdminsController::storeAdmins
+
+admins_categories:
+    path: /categories
+    controller: App\Controller\Admins\AdminsController::showCategories
+
+admins_create_category:
+    path: /create-category
+    controller: App\Controller\Admins\AdminsController::createCategory
+
+admins_store_category:
+    path: /storecategory
+    controller: App\Controller\Admins\AdminsController::storeCategory
+
+admins_delete_category:
+    path: /deletecategory/{category}
+    controller: App\Controller\Admins\AdminsController::deleteCategory
+
+admins_update_category:
+    path: /updatecategory/{category}
+    controller: App\Controller\Admins\AdminsController::updateCategory
+
+admins_edit_category:
+    path: /editcategory/{category}
+    controller: App\Controller\Admins\AdminsController::editCategory
+
+admins_show_posts:
+    path: /posts
+    controller: App\Controller\Admins\AdminsController::showPosts
+
+admins_delete_post:
+    path: /deletepost/{post}
+    controller: App\Controller\Admins\AdminsController::deletePost

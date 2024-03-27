@@ -1,0 +1,52 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block content %}
+
+{% if app.session.has('category') %}
+    <p class="container alert alert-success">{{ app.session.get('category') }}</p>
+{% endif %}
+{% if app.session.has('categorydelete') %}
+    <p class="container alert alert-success">{{ app.session.get('categorydelete') }}</p>
+{% endif %}
+{% if app.session.has('categoryupdate') %}
+    <p class="container alert alert-success">{{ app.session.get('categoryupdate') }}</p>
+{% endif %}
+
+<div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title mb-4 d-inline">Categories</h5>
+         <a  href="{{ path('admin_admins_create_category') }}" class="btn btn-primary mb-4 text-center float-right">Create</a>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">update</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for category in categories %}
+              <tr>
+                <th scope="row">{{ category.id }}</th>
+                <td>{{ category.name }}</td>
+                <td><a  href="{{ path('admin_admins_update_category', {'category': category.id}) }}" class="btn btn-warning text-white text-center ">Update</a></td>
+                <td>
+                    <form action="{{ path('admin_admins_delete_category', {'category': category.id}) }}" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+              </tr>
+              {% else %}
+                 <p>No categories yet, add one please</p>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

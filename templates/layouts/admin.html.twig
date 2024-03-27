@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('/assets/styles/style.css') }}" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-info mb-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('admins_dashboard') }}">M&Code</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                {# {% if app.user and app.user.role == "ROLE_ADMIN" %} #}
+                <ul class="navbar-nav side-nav bg-info">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="margin-left: 20px;" href="{{ path('admin_admins_dashboard') }}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('admin_admins_list') }}" style="margin-left: 20px;">Admins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('admin_admins_categories') }}" style="margin-left: 20px;">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('admin_admins_show_posts') }}" style="margin-left: 20px;">Posts</a>
+                    </li>
+                </ul>
+                {# {% endif %} #}
+                <ul class="navbar-nav ml-md-auto d-md-flex">
+                    {% if app.user and app.user.roles == ["ROLE_ADMIN"] %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ app.user.name }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('app_logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ path('app_logout') }}" method="POST" class="d-none">
+                              
+                            </form>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin_admins_login') }}">login
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    {% endif %} 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-5">
+        <main class="py-4">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

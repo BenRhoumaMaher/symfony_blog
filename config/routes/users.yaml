@@ -1,0 +1,11 @@
+users_update:
+    path: /user/{user}/edit
+    controller: App\Controller\Users\UsersController::updateProfile
+
+users_edit:
+    path: /user/{user}
+    controller: App\Controller\Users\UsersController::editProfile
+
+single_profile:
+    path: /profile/{user}
+    controller: App\Controller\Users\UsersController::profile

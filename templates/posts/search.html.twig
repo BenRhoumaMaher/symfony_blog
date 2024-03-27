@@ -1,0 +1,32 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block content %}
+<div class="section search-result-wrap">
+    <div class="container">
+        <div class="row">
+            {# <div class="col-12">
+                <div class="heading">Category: {{ categoryname }}</div>
+            </div> #}
+        </div>
+        <div class="row posts-entry">
+            <div class="col-lg-8">
+                {% for post in results %}
+                <div class="blog-entry d-flex blog-entry-search-item">
+                    <a href="{{ path('post_posts_single', {'post': post.id}) }}" class="img-link me-4">
+                        <img src="{{ asset('assets/uploads/images/' ~ post.image) }}" alt="Image" class="img-fluid">
+                    </a>
+                    <div>
+                        <a href="{{ path('category_category_single', {'category': post.category.name}) }}">{{ post.category.name }}</a>
+                        <h2><a href="{{ path('post_posts_single', {'post': post.id}) }}">{{ post.title[:10] }}...</a></h2>
+                        <p>{{ post.description[:20] }}...</p>
+                        <p><a href="{{ path('post_posts_single', {'post': post.id}) }}" class="btn btn-sm btn-outline-primary">Read More</a></p>
+                    </div>
+                </div>
+                {% else %}
+                    <p class='text-danger'>No results, try to search for something else</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

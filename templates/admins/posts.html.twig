@@ -1,0 +1,48 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block content %}
+
+{% if app.session.has('postdelete') %}
+<p class="container alert alert-success">{{ app.session.get('postdelete') }}</p>
+{% endif %}
+
+<div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title mb-4 d-inline">Posts</h5>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">title</th>
+                <th scope="col">category</th>
+                <th scope="col">user</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {% for post in posts %}
+                <th scope="row">{{ post.id }}</th>
+                <td>{{ post.title[:20] }}...</td>
+                <td>{{ post.category.name }}</td>
+                <td>{{ post.user.name }}</td>
+                 <td>
+                    <form action="{{ path('admin_admins_delete_post', {'post': post.id}) }}" method="POST">
+                        <button type="submit" class="btn btn-danger text-center">delete</button>
+                    </form>
+                </td>
+              </tr>
+              {% else %}
+                    <p>No posts yet, add a post please</p>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

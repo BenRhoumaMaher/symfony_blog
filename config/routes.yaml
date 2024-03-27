@@ -3,3 +3,23 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+App\Controller\PostsController:
+    resource: routes/posts.yaml
+    prefix: /post
+    name_prefix: 'post_'
+
+App\Controller\CategoriesController:
+    resource: routes/categories.yaml
+    prefix: /category
+    name_prefix: 'category_'
+
+App\Controller\UsersController:
+    resource: routes/users.yaml
+    prefix: /user
+    name_prefix: 'user_'
+
+App\Controller\AdminsController:
+    resource: routes/admins.yaml
+    prefix: /admin
+    name_prefix: 'admin_' 

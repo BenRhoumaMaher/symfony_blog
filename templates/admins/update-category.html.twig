@@ -1,0 +1,21 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block content %}
+<div class="comment-form-wrap pt-5">
+    <h3 class="ps-5">Update category : <span class="text-success"> {{ categoryName }} </span></h3>
+    <form action="{{ path('admin_admins_update_category',{'category': category}) }}" class="ps-5 pe-5 bg-light" method="POST">
+        {{ form_start(form) }}
+
+        <div class="form-group mt-2">
+            <label class="form-label">Update Category Name</label>
+            {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group mt-2 mb-2">
+            <input type="submit" value="Create" class="btn btn-primary">
+        </div>
+
+        {{ form_end(form) }}
+    </form>
+</div>
+{% endblock %}

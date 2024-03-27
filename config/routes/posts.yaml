@@ -1,0 +1,51 @@
+home:
+    path: /home
+    controller: App\Controller\Posts\PostsController::index
+
+welcome:
+    path: /
+    controller: App\Controller\Posts\PostsController::index
+
+contact:
+    path: /contact
+    controller: App\Controller\Posts\PostsController::contact
+
+about:
+    path: /about
+    controller: App\Controller\Posts\PostsController::about
+
+posts_index:
+    path: /posts/index
+    controller: App\Controller\Posts\PostsController::index
+
+posts_single:
+    path: /single/{post}
+    controller: App\Controller\Posts\PostsController::single
+
+comment_store:
+    path: /post/comment-store
+    controller: App\Controller\Posts\PostsController::storeComment
+
+post_create:
+    path: /post/create-post
+    controller: App\Controller\Posts\PostsController::createPost
+
+post_store:
+    path: /post-store
+    controller: App\Controller\Posts\PostsController::storePost
+
+posts_delete:
+    path: /post-delete/{post}
+    controller: App\Controller\Posts\PostsController::deletePost
+
+posts_edit:
+    path: /{post}/edit
+    controller: App\Controller\Posts\PostsController::editPost
+
+posts_update:
+    path: /updatepost/{post}
+    controller: App\Controller\Posts\PostsController::updatePost
+
+posts_search:
+    path: /search
+    controller: App\Controller\Posts\PostsController::search

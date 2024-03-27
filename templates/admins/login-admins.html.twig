@@ -1,0 +1,36 @@
+{# {% extends 'layouts/admin.html.twig' %} #}
+
+
+{# {% block content %} #}
+	{# <div class="comment-form-wrap pt-5">
+		<h3 class="ps-5">Login admin</h3>
+		<form action="{{ path('admin_admins_login') }}" class="ps-5 pe-5 bg-light" method="POST">
+			{{ form_start(form) }}
+
+			<div class="form-group mt-2">
+				<label class="form-label">Enter Email</label>
+				{# add email failed flash message #}
+				{# {% if app.session.flashbag().has("erroradmin") %}
+					{% for message in app.session.flashbag().get("erroradmin") %}
+						<p style="color: red;">{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+				{{ form_widget(form.email, { 'attr': {'class': 'form-select form-control'} }) }}
+			</div> #}
+
+			{# <div class="form-group mt-2">
+				<label class="form-label">Enter Password</label>
+				{% if app.session.flashbag().has("errorpassword") %}
+					{% for message in app.session.flashbag().get("errorpassword") %}
+						<p style="color: red;">{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+				{{ form_widget(form.password, { 'attr': {'class': 'form-control'} }) }}
+			</div> #}
+			{# <div class="form-group mt-2 mb-2">
+				<input type="submit" value="Login" class="btn btn-primary">
+			</div>
+			{{ form_end(form) }}
+		</form> #}
+	{# </div> 
+{% endblock %} #}
