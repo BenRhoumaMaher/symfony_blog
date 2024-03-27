@@ -44,4 +44,4 @@ Symfony Blog is open-source software released under the MIT license.
 
 For any questions or issues, please [open an issue](https://github.com/yourusername/symfony_blog/issues) on GitHub.
 
-Happy blogging with Symfony Blog! 🚀
+Happy blogging with Maher's Symfony Blog! 🚀
