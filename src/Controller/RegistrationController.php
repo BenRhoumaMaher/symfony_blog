@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RegistrationController.php
  *
@@ -30,13 +31,13 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
  * RegistrationController
  *
  * @category Controllers
- * 
+ *
  * @package App\Controller\Registration
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 
@@ -46,12 +47,12 @@ class RegistrationController extends AbstractController
 
     /**
      * Register Method to register the users
-     * 
+     *
      * @param SluggerInterface            $slugger            The slugger interface
      * @param Request                     $request            The request object
      * @param UserPasswordHasherInterface $userPasswordHasher The user    password hasher
      * @param EntityManagerInterface      $entityManager      The entity manager
-     * 
+     *
      * @return Response
      */
     public function register(SluggerInterface $slugger, Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
@@ -79,9 +80,7 @@ class RegistrationController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-
                 }
-
                 $user->setImage($newFilename);
             }
             $user->setRoles(['ROLE_USER']);

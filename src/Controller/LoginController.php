@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LoginController.php
  *
@@ -24,13 +25,13 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  * LoginController
  *
  * @category Controllers
- * 
+ *
  * @package App\Controller\Login
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 
@@ -40,9 +41,9 @@ class LoginController extends AbstractController
 
     /**
      * Login Method to login the users to the application
-     * 
+     *
      * @param AuthenticationUtils $authenticationUtils The authentication utilities service
-     * 
+     *
      * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
@@ -65,7 +66,7 @@ class LoginController extends AbstractController
     #[Route(path: '/logout', name: 'app_logout')]
     /**
      * Logout Method to log out the user from the application
-     * 
+     *
      * @return Response
      */
     public function logout(): void

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CategoriesRepository.php
  *
@@ -12,6 +13,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Repository;
 
 use App\Entity\Categories;
@@ -20,7 +22,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Repository class for managing Categories entities.
- * 
+ *
  * @extends ServiceEntityRepository<Categories>
  *
  * @method   Categories|null find($id, $lockMode = null, $lockVersion = null)

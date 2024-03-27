@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Comments.php
  *
@@ -12,6 +13,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Repository;
 
 use App\Entity\Comments;
@@ -20,13 +22,13 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Repository class for managing Comments entities.
- * 
+ *
  * @extends ServiceEntityRepository<Comments>
  *
  * @method   Comments|null find($id, $lockMode = null, $lockVersion = null)
  * @method   Comments|null findOneBy(array $criteria, array $orderBy = null)
  * @method   Comments[]    findAll()
- * @method   Comments[]    findBy(array $criteria, 
+ * @method   Comments[]    findBy(array $criteria,
  * array $orderBy = null, $limit = null, $offset = null)
  * @category Repositories
  * @package  App\Repository
@@ -37,11 +39,10 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CommentsRepository extends ServiceEntityRepository
 {
-
     /**
      * CommentsRepository constructor.
      *
-     * @param ManagerRegistry $registry The registry service 
+     * @param ManagerRegistry $registry The registry service
      *                                  for managing entity managers.
      */
     public function __construct(ManagerRegistry $registry)

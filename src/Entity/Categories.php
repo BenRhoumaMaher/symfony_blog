@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Categories.php
  *
@@ -11,6 +12,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -23,13 +25,13 @@ use Doctrine\Common\Collections\Collection;
  * Categories
  *
  * @category Entities
- * 
+ *
  * @package App\Entity
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class Categories
@@ -45,7 +47,7 @@ class Categories
     #[ORM\OneToMany(targetEntity: Posts::class, mappedBy: 'category', cascade: ["remove"])]
     private Collection $_posts;
 
-    /** 
+    /**
      * Construct of the class Categories
      */
     public function __construct()
@@ -132,5 +134,4 @@ class Categories
 
         return $this;
     }
-
 }

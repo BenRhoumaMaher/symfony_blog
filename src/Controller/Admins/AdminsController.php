@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  AdminsController.php
  *
@@ -34,18 +35,13 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
  * AdminsController
  *
  * @category Controllers
- * 
- * @package App\Controller\Admins
- * 
- * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
- * @license No license (Personal project)
- * 
- * @link https://symfony.com/doc/current/controller.html
+ * @package  App\Controller\Admins
+ * @author   Maher Ben Rhouma <maherbenrhouma@gmail.com>
+ * @license  No license (Personal project)
+ * @link     https://symfony.com/doc/current/controller.html
  */
 class AdminsController extends AbstractController
 {
-
     /**
      * Constructor.
      *
@@ -55,7 +51,7 @@ class AdminsController extends AbstractController
      * @param Request                $request              The request Object.
      * @param AdminsRepository       $adminRepository      The admins repository.
      * @param UserRepository         $userRepository       The user repository.
-     * 
+     *
      * @return void
      */
     public function __construct(
@@ -69,7 +65,7 @@ class AdminsController extends AbstractController
     }
     /**
      * Index Method to display all the posts
-     * 
+     *
      * @return Response
      */
     public function index(): Response
@@ -91,7 +87,7 @@ class AdminsController extends AbstractController
 
     /**
      * Showadmins Method to display all the admins
-     * 
+     *
      * @return Response
      */
     public function showAdmins(): Response
@@ -109,9 +105,9 @@ class AdminsController extends AbstractController
 
     /**
      * CreateAdmins Method to create new admins
-     * 
+     *
      * @param UserPasswordHasherInterface $userPasswordHasher The user password hasher.
-     * 
+     *
      * @return Response
      */
     public function createAdmins(UserPasswordHasherInterface $userPasswordHasher): Response
@@ -121,7 +117,6 @@ class AdminsController extends AbstractController
 
         $form->handleRequest($this->request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $admin->setPassword(
                 $userPasswordHasher->hashPassword(
                     $admin,
@@ -147,7 +142,7 @@ class AdminsController extends AbstractController
 
     /**
      * ShowCategories Method to display all the categories
-     * 
+     *
      * @return Response
      */
     public function showCategories(): Response
@@ -164,9 +159,9 @@ class AdminsController extends AbstractController
 
     /**
      * DeleteCategory Method to delete categories
-     * 
+     *
      * @param Categories $category The categories entity.
-     * 
+     *
      * @return Response
      */
     public function deleteCategory(Categories $category): Response
@@ -181,7 +176,7 @@ class AdminsController extends AbstractController
 
     /**
      * CreateCategoty Method to create new categories
-     * 
+     *
      * @return Response
      */
     public function createCategory(): Response
@@ -191,7 +186,6 @@ class AdminsController extends AbstractController
 
         $form->handleRequest($this->request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $this->em->persist($category);
             $this->em->flush();
 
@@ -200,9 +194,9 @@ class AdminsController extends AbstractController
     }
     /**
      * UpdateCategory Method to update categories
-     * 
+     *
      * @param Categories $category The categories entity.
-     * 
+     *
      * @return Response
      */
     public function updateCategory(Categories $category): Response
@@ -229,7 +223,7 @@ class AdminsController extends AbstractController
 
     /**
      * ShowPosts Method to display all the posts
-     * 
+     *
      * @return Response
      */
     public function showPosts(): Response
@@ -247,9 +241,9 @@ class AdminsController extends AbstractController
 
     /**
      * Showadmins Method to display all the admins
-     * 
+     *
      * @param Posts $post The posts entity.
-     * 
+     *
      * @return Response
      */
     public function deletePost(Posts $post): Response
@@ -261,5 +255,4 @@ class AdminsController extends AbstractController
         // Redirect to the index page
         return $this->redirectToRoute('admin_admins_show_posts');
     }
-
 }

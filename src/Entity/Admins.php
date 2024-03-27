@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.php
  *
@@ -11,6 +12,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -23,13 +25,13 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  * Admins
  *
  * @category Entities
- * 
+ *
  * @package App\Entity
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class Admins implements PasswordAuthenticatedUserInterface
@@ -131,5 +133,4 @@ class Admins implements PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostsRepository.php
  *
@@ -12,6 +13,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Repository;
 
 use App\Entity\Posts;
@@ -20,7 +22,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Repository class for managing Posts entities.
- * 
+ *
  * @extends ServiceEntityRepository<Posts>
  *
  * @method   Posts|null find($id, $lockMode = null, $lockVersion = null)
@@ -36,7 +38,6 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PostsRepository extends ServiceEntityRepository
 {
-
     /**
      * PostsRepository constructor.
      *
@@ -48,11 +49,11 @@ class PostsRepository extends ServiceEntityRepository
     }
 
     /**
-     * Find a post by a given post title. 
+     * Find a post by a given post title.
      *
      * @param string $search The post title.
      *
-     * @return int Number of posts in the given category. 
+     * @return int Number of posts in the given category.
      */
     public function findByTitle($search)
     {

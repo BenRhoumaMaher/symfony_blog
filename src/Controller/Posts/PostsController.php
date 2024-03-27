@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostsController.php
  *
@@ -26,24 +27,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
-
 /**
  * PostsController
  *
  * @category Controllers
- * 
+ *
  * @package App\Controller\Posts
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class PostsController extends AbstractController
 {
-
     /**
      * Constructor.
      *
@@ -51,7 +49,7 @@ class PostsController extends AbstractController
      * @param CategoriesRepository   $categoriesRepository The categories repository.
      * @param PostsRepository        $postsRepository      The posts repository.
      * @param Request                $request              The request object.
-     * 
+     *
      * @return void
      */
     public function __construct(
@@ -63,7 +61,7 @@ class PostsController extends AbstractController
     }
     /**
      * Index Method to display all the posts
-     * 
+     *
      * @return Response
      */
     public function index(): Response
@@ -152,7 +150,7 @@ class PostsController extends AbstractController
      * Displaying single post
      *
      * @param mixed $post The posts entity.
-     * 
+     *
      * @return Response
      */
     public function single(Posts $post): Response
@@ -191,7 +189,7 @@ class PostsController extends AbstractController
 
     /**
      * Storing a comment in database
-     * 
+     *
      * @return Response
      */
     public function storeComment(): Response
@@ -218,7 +216,7 @@ class PostsController extends AbstractController
 
     /**
      * Create new post
-     * 
+     *
      * @return Response
      */
     public function createPost(): Response
@@ -228,11 +226,9 @@ class PostsController extends AbstractController
 
         $form->handleRequest($this->request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $file = $form->get('image')->getData();
             $fileName = uniqid() . '.' . $file->guessExtension();
             $file->move($this->getParameter('image_directory'), $fileName);
-
             // Create a new post entity
             $user = $this->getUser();
             $username = $user->getName();
@@ -264,7 +260,7 @@ class PostsController extends AbstractController
      * Deleting a post
      *
      * @param mixed $post The posts entity.
-     * 
+     *
      * @return Response
      */
     public function deletePost(Posts $post): Response
@@ -281,7 +277,7 @@ class PostsController extends AbstractController
      * Editing a post
      *
      * @param mixed $post The posts entity.
-     * 
+     *
      * @return Response
      */
     public function editPost(Posts $post): Response

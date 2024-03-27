@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AdminsRepository.php
  *
@@ -12,6 +13,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Repository;
 
 use App\Entity\Admins;
@@ -20,7 +22,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Repository class for managing Admins entities.
- * 
+ *
  * @extends ServiceEntityRepository<Admins>
  *
  * @method   Admins|null find($id, $lockMode = null, $lockVersion = null)
@@ -36,7 +38,6 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class AdminsRepository extends ServiceEntityRepository
 {
-
     /**
      * AdminsRepository constructor.
      *

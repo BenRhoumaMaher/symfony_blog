@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User.php
  *
@@ -11,6 +12,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Entity;
 
 use Doctrine\DBAL\Types\Types;
@@ -29,13 +31,13 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  * User
  *
  * @category Entities
- * 
+ *
  * @package App\Entity
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -66,19 +68,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * The roles of the user.
-     * 
+     *
      * @var list<string> The user roles
      */
     #[ORM\Column]
     private array $_roles = [];
 
-    /** 
+    /**
      * Construct of the class User
      */
     public function __construct()
     {
         $this->roles = ['ROLE_USER'];
-
     }
 
     /**
@@ -197,7 +198,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * This method is called after the user's information has been used to authenticate and it is no longer needed.
      *
      * @see UserInterface
-     * 
+     *
      * @return void
      */
     public function eraseCredentials(): void
@@ -369,6 +370,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
-
 }

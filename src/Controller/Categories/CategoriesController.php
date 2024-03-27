@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CategoriesController.php
  *
@@ -22,30 +23,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
 /**
  * CategoriesController
  *
  * @category Controllers
- * 
+ *
  * @package App\Controller\Categories
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class CategoriesController extends AbstractController
 {
-
     /**
      * Constructor.
      *
      * @param CategoriesRepository $categoriesRepository The categories repository.
      * @param PostsRepository      $postsRepository      The posts repository.
      * @param Request              $request              The request object.
-     * 
+     *
      * @return void
      */
     public function __construct(

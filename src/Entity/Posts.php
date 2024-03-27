@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Posts.php
  *
@@ -11,12 +12,12 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Entity;
 
 use App\Repository\PostsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostsRepository::class)]
@@ -25,13 +26,13 @@ use Doctrine\ORM\Mapping as ORM;
  * Posts
  *
  * @category Entities
- * 
+ *
  * @package App\Entity
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class Posts
@@ -62,7 +63,7 @@ class Posts
     #[ORM\ManyToOne(inversedBy: 'posts')]
     private ?Categories $_category = null;
 
-    /** 
+    /**
      * Construct of the class Posts
      */
     public function __construct()
@@ -269,5 +270,4 @@ class Posts
 
         return $this;
     }
-
 }

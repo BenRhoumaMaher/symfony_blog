@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostsController.php
  *
@@ -25,24 +26,23 @@ use Symfony\Component\HttpFoundation\Response;
  * UsersController
  *
  * @category Controllers
- * 
+ *
  * @package App\Controller\Users
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class UsersController extends AbstractController
 {
-
     /**
      * Constructor.
      *
      * @param EntityManagerInterface $em      The entity manager.
      * @param Request                $request The request object.
-     * 
+     *
      * @return void
      */
     public function __construct(
@@ -53,9 +53,9 @@ class UsersController extends AbstractController
 
     /**
      * Updateprofile Method to display the update form
-     * 
+     *
      * @param User $user The user entity.
-     * 
+     *
      * @return Response
      */
     public function updateProfile(User $user): Response
@@ -71,9 +71,9 @@ class UsersController extends AbstractController
 
     /**
      * EditPorile Method to update users profile
-     * 
+     *
      * @param User $user The user entity.
-     * 
+     *
      * @return Response
      */
     public function editProfile(User $user): Response
@@ -96,9 +96,9 @@ class UsersController extends AbstractController
 
     /**
      * Profile Method to display user profile
-     * 
+     *
      * @param User $user The user entity.
-     * 
+     *
      * @return Response
      */
     public function profile(User $user): Response

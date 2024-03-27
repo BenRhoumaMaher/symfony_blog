@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Comments.php
  *
@@ -11,6 +12,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Entity;
 
 use App\Repository\CommentsRepository;
@@ -22,13 +24,13 @@ use Doctrine\ORM\Mapping as ORM;
  * Comments
  *
  * @category Entities
- * 
+ *
  * @package App\Entity
- * 
+ *
  * @author Maher Ben Rhouma <maherbenrhouma@gmail.com>
- * 
+ *
  * @license No license (Personal project)
- * 
+ *
  * @link https://symfony.com/doc/current/controller.html
  */
 class Comments
@@ -128,5 +130,4 @@ class Comments
 
         return $this;
     }
-
 }

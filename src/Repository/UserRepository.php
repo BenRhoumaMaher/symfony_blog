@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UserRepository.php
  *
@@ -12,6 +13,7 @@
  * @link     https://symfony.com/doc/current/controller.html
  * @since    PHP 8.2
  */
+
 namespace App\Repository;
 
 use App\Entity\User;
@@ -23,7 +25,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
  * Repository class for managing User entities.
- * 
+ *
  * @extends ServiceEntityRepository<User>
  *
  * @method   User|null find($id, $lockMode = null, $lockVersion = null)
@@ -42,7 +44,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     /**
      * UserRepository constructor.
      *
-     * @param ManagerRegistry $registry The registry service 
+     * @param ManagerRegistry $registry The registry service
      *                                  for managing entity managers.
      */
     public function __construct(ManagerRegistry $registry)
@@ -52,10 +54,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
-     * 
+     *
      * @param PasswordAuthenticatedUserInterface $user              The user interface object implementing
      * @param string                             $newHashedPassword The new hashed password that is stored in the database.
-     * 
+     *
      * @return void
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
@@ -72,7 +74,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     /**
      * Find an admin by a given role. .
      *
-     * @return int Number of posts in the given category. 
+     * @return int Number of posts in the given category.
      */
     public function findAdmins()
     {
